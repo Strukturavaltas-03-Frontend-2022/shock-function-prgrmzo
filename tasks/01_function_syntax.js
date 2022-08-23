@@ -13,12 +13,12 @@
  * return - a függvény visszatérési értéke
  */
 function add(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 
 /**
  * Feladatok: minden függvény előtt le lesz írva, mi a pontos feladat.
- * Először csak egy-egy sort kell pótolnod, majd egyre többet kell önállóan 
+ * Először csak egy-egy sort kell pótolnod, majd egyre többet kell önállóan
  * megírnod a függvényekből.
  * Figyelj a dokumantációs kommentekre, amelyek /** jellel kezdődnek.
  */
@@ -31,7 +31,7 @@ function add(num1, num2) {
  * @returns {string} - a kapott üzenet.
  */
 function logTheString(message) {
-    return;
+  return `${message}`;
 }
 
 /**
@@ -43,7 +43,7 @@ function logTheString(message) {
  * @desc Példa a név beszúrására: `Howdy ${userName}!`
  */
 function getGreeting(name) {
-    return;
+  return `Hello ${name}!`;
 }
 
 /**
@@ -54,8 +54,8 @@ function getGreeting(name) {
  * @returns {string} `Hello <name>!` kifejezés, <name> = name nagy kezdőbetűvel.
  */
 function getTitleGreeting(name) {
-    const titleCaseName = name[0].toUpperCase() + name.slice(1);
-    return;
+  const titleCaseName = name[0].toUpperCase() + name.slice(1);
+  return `Hello ${titleCaseName}!`;
 }
 
 /**
@@ -66,7 +66,8 @@ function getTitleGreeting(name) {
  * @returns {string} `Product: <name>!`, <name> = productName nagy kezdőbetűvel.
  */
 function getProductDetails(productName) {
-    // 
+  const product = productName[0].toUpperCase() + productName.slice(1);
+  return `Product: ${product}!`;
 }
 
 /**
@@ -76,120 +77,142 @@ function getProductDetails(productName) {
  * @param {number} price Egy termék ára.
  * @returns {number} a price 1.27-szerese.
  */
-const getBruttoPrice = function(price) {
-    const bruttoPrice = price * 1.27;
-    return;
-}
+const getBruttoPrice = function (price) {
+  const bruttoPrice = price * 1.27;
+  return bruttoPrice;
+};
 
 /**
  * 6. feladat
  * @todo Pótold a hiányzó részeket!
- * @summary Függvénykifejezés, visszadja a kapott szám 1.27-szeresét, egészre 
+ * @summary Függvénykifejezés, visszadja a kapott szám 1.27-szeresét, egészre
  * kerekítve.
  * @param {number} price Egy termék ára.
  * @returns {number} a price 1.27-szerese, egészre kerekítve.
  */
-const getRoundedBruttoPrice = function(price) {
-    const bruttoPrice = Math.round(price * 1.27);
-    return;
-}
+const getRoundedBruttoPrice = function (price) {
+  const bruttoPrice = Math.round(price * 1.27);
+  return bruttoPrice;
+};
 
 /**
  * 7. feladat
  * @todo Pótold a hiányzó részeket!
- * @summary Függvénykifejezés, visszadja a kapott szám 1.35-szörösét, egészre 
+ * @summary Függvénykifejezés, visszadja a kapott szám 1.35-szörösét, egészre
  * kerekítve.
  * @param {number} price Egy termék ára.
  * @returns {number} a price 1.35-szöröse, egészre kerekítve.
  */
-const getSellPrice = function(price) {
-    // 
-}
+const getSellPrice = function (price) {
+  const sellPrice = Math.round(price * 1.35);
+  return sellPrice;
+};
 
 /**
  * 8. feladat
  * @todo Pótold a hiányzó részeket!
- * @summary Függvénykifejezés, visszadja a kapott szám 1.35-szörösét, 
+ * @summary Függvénykifejezés, visszadja a kapott szám 1.35-szörösét,
  * majd ennek 0.9-szeresét egészre kerekítve.
  * @param {number} price Egy termék ára.
  * @returns {number} a price 1.35-szörösének a 0.9-szerese, egészre kerekítve.
  */
-const getActionPrice = function(price) {
-    // 
-}
+const getActionPrice = function (price) {
+  const partialPrice = price * 1.35;
+  const finalPrice = Math.round(partialPrice * 0.9);
+  return finalPrice;
+};
 
 /**
  * 9. feladat
  * @todo Pótold a hiányzó részeket!
  * @summary ArrowFunctionExpression, visszadja a termék összefoglalóját.
  * @param {Object} product Egy termék, például: {name: '', price: 0, stock: 0}
- * @returns {string} `<name>, $<price>, in stock: <stock>`, 
+ * @returns {string} `<name>, $<price>, in stock: <stock>`,
  * <name> = a product.name nagy kezdőbetűvel
  * <price> = a product.price 1.35-szöröse kerekítve
  * <stock> = a product.stock
  */
-const getProductDescrition = product => {
-    // 
-}
+const getProductDescrition = (product) => {
+  return `${
+    product.name[0].toUpperCase() + product.name.slice(1)
+  }, $${Math.round(product.price * 1.35)}, in stock: ${product.stock}`;
+};
 
 /**
  * 10. feladat
  * @todo Pótold a hiányzó részeket!
- * @summary ArrowFunctionExpression, neve: getBio  
+ * @summary ArrowFunctionExpression, neve: getBio
  * visszadja a tag adatait egy mondatban.
  * @param {Object} member Egy ember, például: {name: '', age: 0, city: ''}
- * @returns {string} `<name>, <age> years old, live in: <city>.`, 
+ * @returns {string} `<name>, <age> years old, live in: <city>.`,
  * <name> = member neve nagy kezdőbetűvel
  * <age> = member kora
  * <city> = member városa
  * @desc EXPORTÁLNI KELL A FÜGGVÉNYT!
  */
+const getBio = (member) => {
+  return `${member.name[0].toUpperCase() + member.name.slice(1)}, ${
+    member.age
+  } years old, live in: ${member.city}.`;
+};
 
-
+export { getBio };
 
 /**
  * 11. feladat
  * @todo Pótold a hiányzó részeket!
  * @summary ArrowFunctionExpression, visszadja a tag adatait egy mondatban.
- * @param {Object} member [member={name: 'jimmy', birthYear: 2000, city: 'SF'}] 
+ * @param {Object} member [member={name: 'jimmy', birthYear: 2000, city: 'SF'}]
  * Egy embert reprezentáló objektum az alapértelmezett érték szerint.
  * Ha nem kap a függvény member objektumot, akkor a default értékkel dolgozik.
- * @returns {string} `<name>, <age> years old, live in: <city>.`, 
+ * @returns {string} `<name>, <age> years old, live in: <city>.`,
  * <name> = member neve nagy kezdőbetűvel
  * <age> = member kora, a birthYear alapján kiszámítva
  * <city> = member városa
  */
-const getMemberDesc = (member = {name: 'jimmy', birthYear: 2000, city: 'SF'}) => {
-    const age = new Date().getFullYear() - member.birthYear;
-}
+const getMemberDesc = (
+  member = { name: "jimmy", birthYear: 2000, city: "SF" }
+) => {
+  const age = new Date().getFullYear() - member.birthYear;
+  return `${
+    member.name[0].toUpperCase() + member.name.slice(1)
+  }, ${age} years old, live in: ${member.city}.`;
+};
 
 /**
  * 12. feladat
  * @todo Pótold a hiányzó részeket!
- * @summary ArrowFunctionExpression, neve: getCarDetails  
+ * @summary ArrowFunctionExpression, neve: getCarDetails
  * visszadja az autó leírását.
- * @param {Object} car [car={manufacturer: 'ford', year: 2010, type: 'fiesta'}] 
+ * @param {Object} car [car={manufacturer: 'ford', year: 2010, type: 'fiesta'}]
  * Egy autót reprezentáló objektum az alapértelmezett érték szerint.
  * Ha nem kap a függvény car objektumot, akkor a default értékkel dolgozik.
- * @returns {string} `<man>, <age> years old, type: <type>.`, 
+ * @returns {string} `<man>, <age> years old, type: <type>.`,
  * <man> = a gyártó neve nagy kezdőbetűvel
  * <age> = az autó kora, a year alapján kiszámítva
  * <type> = az autó típusa nagy kezdőbetűvel
  * @desc EXPORTÁLNI KELL A FÜGGVÉNYT!
  */
+const getCarDetails = (
+  car = { manufacturer: "ford", year: 2010, type: "fiesta" }
+) => {
+  const age = new Date().getFullYear() - car.year;
+  return `${
+    car.manufacturer[0].toUpperCase() + car.manufacturer.slice(1)
+  }, ${age} years old, type: ${car.type[0].toUpperCase() + car.type.slice(1)}.`;
+};
 
+export { getCarDetails };
 
 export {
-    logTheString,
-    getGreeting,
-    getTitleGreeting,
-    getProductDetails,
-    getBruttoPrice,
-    getRoundedBruttoPrice,
-    getSellPrice,
-    getActionPrice,
-    getProductDescrition,
-
-    getMemberDesc,
-    
-}
+  logTheString,
+  getGreeting,
+  getTitleGreeting,
+  getProductDetails,
+  getBruttoPrice,
+  getRoundedBruttoPrice,
+  getSellPrice,
+  getActionPrice,
+  getProductDescrition,
+  getMemberDesc,
+};
